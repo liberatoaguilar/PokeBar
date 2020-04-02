@@ -8,7 +8,7 @@ PokeBar_FILES = Tweak.xm
 PokeBar_CFLAGS = -fobjc-arc
 export ARCHS = arm64e
 export SDKVERSION = 13.2
-THEOS_DEVICE_IP = 192.168.1.74
+THEOS_DEVICE_IP = iPhone.local
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 include $(THEOS_MAKE_PATH)/aggregate.mk

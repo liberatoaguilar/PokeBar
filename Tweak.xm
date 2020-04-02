@@ -60,16 +60,18 @@
 
 - (void)layoutSubviews {
   %orig;
-  UIUserInterfaceStyleArbiter *modeStyleArbiter = [%c(UIUserInterfaceStyleArbiter) sharedInstance];
-  long long style = modeStyleArbiter.currentStyle;
-  if(style == 1){
-    UIColor *white = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
-    self.backgroundColor = white;
-  }
-  else if(style == 2){
-    UIColor *black = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
-    self.backgroundColor = black;
-  }
+  // UIUserInterfaceStyleArbiter *modeStyleArbiter = [%c(UIUserInterfaceStyleArbiter) sharedInstance];
+  // long long style = modeStyleArbiter.currentStyle;
+  // if(style == 1){
+  //   UIColor *white = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+  //   self.backgroundColor = white;
+  // }
+  // else if(style == 2){
+  //   UIColor *black = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
+  //   self.backgroundColor = black;
+  // }
+  UIColor *white = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+  self.backgroundColor = white;
 
   for (UIView *view in self.subviews){
     if([view isKindOfClass:%c(UIImageView)]) {
@@ -83,7 +85,7 @@
         view.frame = newFrame2;
       }
       else {
-        newFrame2.origin.x -= 20;
+        newFrame2.origin.x -= 21;
         newFrame2.origin.y -= 7;
         newFrame2.size.width += 40;
         newFrame2.size.height += 12;

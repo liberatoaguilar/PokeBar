@@ -1,8 +1,11 @@
 #line 1 "Tweak.xm"
+
+
+
+
 #include "CoreText/CTFontManager.h"
 
 @interface PLPlatterView : UIView
-- (NSString *)primaryText;
 @end
 @interface PLTitledPlatterView : PLPlatterView
 @end
@@ -38,8 +41,6 @@
 -(long long)currentStyle;
 @end
 
-static NSString *title2 = @"Paola ♥️";
-
 
 #include <substrate.h>
 #if defined(__clang__)
@@ -61,10 +62,10 @@ static NSString *title2 = @"Paola ♥️";
 #define _LOGOS_RETURN_RETAINED
 #endif
 
-@class NCNotificationShortLookView; @class PLPlatterHeaderContentView; @class MTMaterialView; @class PLShadowView; @class UIUserInterfaceStyleArbiter; @class UIImageView; @class NCNotificationContentView; @class NCNotificationViewControllerView; 
+@class MTMaterialView; @class PLShadowView; @class NCNotificationContentView; @class NCNotificationShortLookView; @class UIImageView; @class PLPlatterHeaderContentView; @class NCNotificationViewControllerView; 
 static void (*_logos_orig$_ungrouped$NCNotificationShortLookView$_setGrabberVisible$)(_LOGOS_SELF_TYPE_NORMAL NCNotificationShortLookView* _LOGOS_SELF_CONST, SEL, BOOL); static void _logos_method$_ungrouped$NCNotificationShortLookView$_setGrabberVisible$(_LOGOS_SELF_TYPE_NORMAL NCNotificationShortLookView* _LOGOS_SELF_CONST, SEL, BOOL); static void (*_logos_orig$_ungrouped$NCNotificationShortLookView$layoutSubviews)(_LOGOS_SELF_TYPE_NORMAL NCNotificationShortLookView* _LOGOS_SELF_CONST, SEL); static void _logos_method$_ungrouped$NCNotificationShortLookView$layoutSubviews(_LOGOS_SELF_TYPE_NORMAL NCNotificationShortLookView* _LOGOS_SELF_CONST, SEL); static void (*_logos_orig$_ungrouped$NCNotificationViewControllerView$setFrame$)(_LOGOS_SELF_TYPE_NORMAL NCNotificationViewControllerView* _LOGOS_SELF_CONST, SEL, CGRect); static void _logos_method$_ungrouped$NCNotificationViewControllerView$setFrame$(_LOGOS_SELF_TYPE_NORMAL NCNotificationViewControllerView* _LOGOS_SELF_CONST, SEL, CGRect); static void (*_logos_orig$_ungrouped$NCNotificationContentView$layoutSubviews)(_LOGOS_SELF_TYPE_NORMAL NCNotificationContentView* _LOGOS_SELF_CONST, SEL); static void _logos_method$_ungrouped$NCNotificationContentView$layoutSubviews(_LOGOS_SELF_TYPE_NORMAL NCNotificationContentView* _LOGOS_SELF_CONST, SEL); static void (*_logos_orig$_ungrouped$PLPlatterHeaderContentView$layoutSubviews)(_LOGOS_SELF_TYPE_NORMAL PLPlatterHeaderContentView* _LOGOS_SELF_CONST, SEL); static void _logos_method$_ungrouped$PLPlatterHeaderContentView$layoutSubviews(_LOGOS_SELF_TYPE_NORMAL PLPlatterHeaderContentView* _LOGOS_SELF_CONST, SEL); static void (*_logos_orig$_ungrouped$PLShadowView$layoutSubviews)(_LOGOS_SELF_TYPE_NORMAL PLShadowView* _LOGOS_SELF_CONST, SEL); static void _logos_method$_ungrouped$PLShadowView$layoutSubviews(_LOGOS_SELF_TYPE_NORMAL PLShadowView* _LOGOS_SELF_CONST, SEL); 
-static __inline__ __attribute__((always_inline)) __attribute__((unused)) Class _logos_static_class_lookup$MTMaterialView(void) { static Class _klass; if(!_klass) { _klass = objc_getClass("MTMaterialView"); } return _klass; }static __inline__ __attribute__((always_inline)) __attribute__((unused)) Class _logos_static_class_lookup$UIImageView(void) { static Class _klass; if(!_klass) { _klass = objc_getClass("UIImageView"); } return _klass; }static __inline__ __attribute__((always_inline)) __attribute__((unused)) Class _logos_static_class_lookup$UIUserInterfaceStyleArbiter(void) { static Class _klass; if(!_klass) { _klass = objc_getClass("UIUserInterfaceStyleArbiter"); } return _klass; }
-#line 42 "Tweak.xm"
+static __inline__ __attribute__((always_inline)) __attribute__((unused)) Class _logos_static_class_lookup$MTMaterialView(void) { static Class _klass; if(!_klass) { _klass = objc_getClass("MTMaterialView"); } return _klass; }static __inline__ __attribute__((always_inline)) __attribute__((unused)) Class _logos_static_class_lookup$UIImageView(void) { static Class _klass; if(!_klass) { _klass = objc_getClass("UIImageView"); } return _klass; }
+#line 43 "Tweak.xm"
 
 static void _logos_method$_ungrouped$NCNotificationShortLookView$_setGrabberVisible$(_LOGOS_SELF_TYPE_NORMAL NCNotificationShortLookView* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd, BOOL ret) {
   _logos_orig$_ungrouped$NCNotificationShortLookView$_setGrabberVisible$(self, _cmd, ret);
@@ -85,34 +86,18 @@ static void _logos_method$_ungrouped$NCNotificationShortLookView$_setGrabberVisi
 
 static void _logos_method$_ungrouped$NCNotificationShortLookView$layoutSubviews(_LOGOS_SELF_TYPE_NORMAL NCNotificationShortLookView* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd) {
   _logos_orig$_ungrouped$NCNotificationShortLookView$layoutSubviews(self, _cmd);
-  UIColor *red = [UIColor colorWithRed:0.6 green:0.0 blue:0.0 alpha:1.0];
-  UIUserInterfaceStyleArbiter *modeStyleArbiter = [_logos_static_class_lookup$UIUserInterfaceStyleArbiter() sharedInstance];
-  long long style = modeStyleArbiter.currentStyle;
-  for(UIView *view in self.subviews){
-    if([view isKindOfClass:_logos_static_class_lookup$MTMaterialView()]) {
-      PLPlatterView *check =(PLPlatterView *) view.superview;
-      if ([check.primaryText isEqualToString:title2]){
-        check.backgroundColor = red;
-        break;
-      }
-      else if([check.primaryText containsString:title2]){
-        check.backgroundColor = red;
-        break;
-      }
-      else {
-        if(style == 1){
-          UIColor *white = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
-          check.backgroundColor = white;
-          break;
-        }
-        else if(style == 2){
-          UIColor *black = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
-          check.backgroundColor = black;
-          break;
-        }
-      }
-    }
-  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  UIColor *white = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+  self.backgroundColor = white;
 
   for (UIView *view in self.subviews){
     if([view isKindOfClass:_logos_static_class_lookup$UIImageView()]) {
@@ -126,7 +111,7 @@ static void _logos_method$_ungrouped$NCNotificationShortLookView$layoutSubviews(
         view.frame = newFrame2;
       }
       else {
-        newFrame2.origin.x -= 20;
+        newFrame2.origin.x -= 21;
         newFrame2.origin.y -= 7;
         newFrame2.size.width += 40;
         newFrame2.size.height += 12;
@@ -227,4 +212,4 @@ static void _logos_method$_ungrouped$PLShadowView$layoutSubviews(_LOGOS_SELF_TYP
 
 static __attribute__((constructor)) void _logosLocalInit() {
 {Class _logos_class$_ungrouped$NCNotificationShortLookView = objc_getClass("NCNotificationShortLookView"); MSHookMessageEx(_logos_class$_ungrouped$NCNotificationShortLookView, @selector(_setGrabberVisible:), (IMP)&_logos_method$_ungrouped$NCNotificationShortLookView$_setGrabberVisible$, (IMP*)&_logos_orig$_ungrouped$NCNotificationShortLookView$_setGrabberVisible$);MSHookMessageEx(_logos_class$_ungrouped$NCNotificationShortLookView, @selector(layoutSubviews), (IMP)&_logos_method$_ungrouped$NCNotificationShortLookView$layoutSubviews, (IMP*)&_logos_orig$_ungrouped$NCNotificationShortLookView$layoutSubviews);Class _logos_class$_ungrouped$NCNotificationViewControllerView = objc_getClass("NCNotificationViewControllerView"); MSHookMessageEx(_logos_class$_ungrouped$NCNotificationViewControllerView, @selector(setFrame:), (IMP)&_logos_method$_ungrouped$NCNotificationViewControllerView$setFrame$, (IMP*)&_logos_orig$_ungrouped$NCNotificationViewControllerView$setFrame$);Class _logos_class$_ungrouped$NCNotificationContentView = objc_getClass("NCNotificationContentView"); MSHookMessageEx(_logos_class$_ungrouped$NCNotificationContentView, @selector(layoutSubviews), (IMP)&_logos_method$_ungrouped$NCNotificationContentView$layoutSubviews, (IMP*)&_logos_orig$_ungrouped$NCNotificationContentView$layoutSubviews);Class _logos_class$_ungrouped$PLPlatterHeaderContentView = objc_getClass("PLPlatterHeaderContentView"); MSHookMessageEx(_logos_class$_ungrouped$PLPlatterHeaderContentView, @selector(layoutSubviews), (IMP)&_logos_method$_ungrouped$PLPlatterHeaderContentView$layoutSubviews, (IMP*)&_logos_orig$_ungrouped$PLPlatterHeaderContentView$layoutSubviews);Class _logos_class$_ungrouped$PLShadowView = objc_getClass("PLShadowView"); MSHookMessageEx(_logos_class$_ungrouped$PLShadowView, @selector(layoutSubviews), (IMP)&_logos_method$_ungrouped$PLShadowView$layoutSubviews, (IMP*)&_logos_orig$_ungrouped$PLShadowView$layoutSubviews);} }
-#line 202 "Tweak.xm"
+#line 187 "Tweak.xm"
