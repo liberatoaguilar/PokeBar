@@ -1,2 +1,4 @@
+.gitignore
 Tweak.xm Copy
 packages
+.DS_Store
